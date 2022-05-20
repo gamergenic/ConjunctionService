@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  ul
+
+  p Alerts for object 
+    strong #{objectid} 
+    | (#{conjuntionList.length} Active):
+  for alert in conjuntionList
+    li 
+      strong Alert ID #{alert.CDM_ID}
+      p Probability:#{alert.PC} / Time of Closest Approach: #{alert.TCA}
+      p #{alert.SAT_1_NAME} (#{alert.SAT1_OBJECT_TYPE}) / #{alert.SAT_2_NAME} (#{alert.SAT2_OBJECT_TYPE})
+    
